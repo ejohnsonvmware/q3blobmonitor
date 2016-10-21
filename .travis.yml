@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.5"
+# command to install dependencies
+#install: "pip install -r requirements.txt"
+install: true
+# command to run tests
+script:
+  - docker build -t q3blobmonitor --rm=true .
+services:
+  - docker
+after_success:
+#  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+#  - docker push ejohnsonvmware/q3blobmonitor
