@@ -19,6 +19,7 @@ do
     echo "Blob changed"
     echo "[DEBUG] start=$origmd5 current=$md5"
     curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: 2184b222-1cb8-9669-ed6a-1ed4750b31e8" -d '{ "service": "postman","message": "Blob file changed" }' ${errorurl}
+    md5orig=$md5
   else
     echo "[DEBUG] md5=$md5"
 
