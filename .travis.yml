@@ -1,0 +1,13 @@
+sudo: false
+services:
+  - docker
+language: go
+go:
+  - 1.6.3
+before_script:
+  - ls
+script:
+  - docker build -t q3blobmonitor --rm=true .
+after_success:
+        #  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+        #  - docker push ejohnsonvmware/q3blobmonitor
