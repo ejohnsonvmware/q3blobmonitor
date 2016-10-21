@@ -5,6 +5,7 @@ language: go
 go:
   - 1.6.3
 before_script:
+  - ls
 script:
   - docker build -t q3blobmonitor --rm=true .
 after_success:
