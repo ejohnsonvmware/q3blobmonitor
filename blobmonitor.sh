@@ -2,7 +2,7 @@
 
 url="http://blobs.vmwaredevops.appspot.com/api/v1/blobs/10"
 errorurl="http://localhost:18081/error"
-content=`curl -s ${url} | python -c "import sys, json; print json.load(sys.stdin)['content']"`
+content=`/usr/bin/curl -s ${url} | python -c "import sys, json; print json.load(sys.stdin)['content']"`
 origmd5=`echo ${content} | md5sum`
 
 echo "Orignal MD5: $origmd5"
@@ -10,7 +10,7 @@ echo "Orignal MD5: $origmd5"
 while [ 1 ]
 do
 
-  content=`curl -s ${url} | python -c "import sys, json; print json.load(sys.stdin)['content']"`
+  content=`/usr/bin/curl -s ${url} | python -c "import sys, json; print json.load(sys.stdin)['content']"`
   md5=`echo ${content} | md5sum`
 
 
